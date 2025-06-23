@@ -1,0 +1,98 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fire Weather Index Predictor</title>
+    <style>
+      body {
+        background: #f0f4f8;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      form {
+        background: #fff;
+        padding: 30px;
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s;
+      }
+
+      input[type="number"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      button {
+        background: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fire Weather Index Predictor</h1>
+    <form action="/predictdata" method="POST">
+      <label>Temperature:</label>
+      <input type="number" name="Temperature" step="any" required />
+
+      <label>RH:</label>
+      <input type="number" name="RH" step="any" required />
+
+      <label>Ws:</label>
+      <input type="number" name="Ws" step="any" required />
+
+      <label>Rain:</label>
+      <input type="number" name="Rain" step="any" required />
+
+      <label>FFMC:</label>
+      <input type="number" name="FFMC" step="any" required />
+
+      <label>DMC:</label>
+      <input type="number" name="DMC" step="any" required />
+
+      <label>ISI:</label>
+      <input type="number" name="ISI" step="any" required />
+
+      <label>Classes:</label>
+      <input type="number" name="Classes" step="any" required />
+
+      <label>Region:</label>
+      <input type="number" name="Region" step="any" required />
+
+      <button type="submit">Predict</button>
+    </form>
+  </body>
+</html>
